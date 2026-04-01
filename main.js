@@ -106,3 +106,11 @@ scissors.addEventListener("click", e => {
     playGame(humanSel);
 
 });
+
+const darkmode = document.querySelector(".switch");
+
+darkmode.addEventListener("click", e => {
+    const body = document.querySelector("body");
+    body.classList.toggle("dark-mode");
+    darkmode.classList.toggle("light-mode");
+})
