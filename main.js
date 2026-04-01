@@ -13,8 +13,7 @@ function getComputerChoice(){
 }
 
 
-function getHumanChoice(){
-    const selection = prompt("Type Rock (R), Paper (P), or Scissor (S):");
+function getHumanChoice(selection){
     switch (selection.toUpperCase()) {
         case "R":{
             return 0;
@@ -43,7 +42,7 @@ function playRound(humanSel, CompSel){
                 alert("Computer Wins with Paper!")
                 CompScore++;
             }else{ //scissor
-                alert("You Win with Scissors!")
+                alert("You Win with Rock!")
                 humanScore++;
             }
             break;
@@ -79,18 +78,31 @@ function playRound(humanSel, CompSel){
 
 
 
-function playGame(){
-    let counter = 0;
-    while((humanScore + CompScore) != 5){ //best out of 5 rounds wins
-        alert(`Current Score: You (${humanScore}) : Computer (${CompScore})
-        Rounds Played: ${counter++}`);
-        humanSel = getHumanChoice();
-        CompSel = getComputerChoice();
-        playRound(humanSel, CompSel);
-    }
-    alert((humanScore > CompScore) ? "You win!! :)" : "Computer wins :\\");
-    alert(`Final Score: You (${humanScore}) : Computer (${CompScore})`);
+function playGame(humanSel){
+    CompSel = getComputerChoice();
+    playRound(humanSel, CompSel);
 }
 
-playGame();
+//playGame();
+   let counter = 0;
+const rock = document.querySelector(".rock");
+const paper = document.querySelector(".paper");
+const scissors = document.querySelector(".scissors");
 
+rock.addEventListener("click", e => {
+    humanSel = getHumanChoice("R");
+    playGame(humanSel);
+
+});
+
+paper.addEventListener("click", e => {
+    humanSel = getHumanChoice("P");
+    playGame(humanSel);
+
+});
+
+scissors.addEventListener("click", e => {
+    humanSel = getHumanChoice("S");
+    playGame(humanSel);
+
+});

@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    display: flex;
+}
+
+.container {
+    box-sizing: border-box;
+    margin: 50% auto;
+    margin-top: 50px;
+    display: flex;
+    width: 600px;
+    border: 1px solid;
+    height: 500px;
+    justify-content:space-around;
+    align-items: center;
+    background-color:blueviolet;
+}
+
+.selection {
+    box-sizing: border-box;
+    width: 180px;
+    height: 180px;
+    background-color: aqua;
+    border: 1px solid;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    color: black;
+    border-radius: 10%;
+}
+
+.selection:hover {
+    background-color: brown;
+    width: 185px;
+    height: 185px;
+    color: white;
+}
+
+
+
